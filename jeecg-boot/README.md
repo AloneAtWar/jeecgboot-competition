@@ -1,0 +1,1 @@
+启动前记得执行一下 jeecg-boot.sql
