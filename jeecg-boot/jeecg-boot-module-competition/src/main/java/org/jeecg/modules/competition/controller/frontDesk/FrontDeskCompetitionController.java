@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/competition/")
 @Slf4j
-public class CompetitionController {
+public class FrontDeskCompetitionController {
     @ApiOperation(value = "分页查询 与我有关的比赛")
     @GetMapping("/my")
     public Result<IPage<MyCompetitionResp>> getMyCompetition(@RequestParam(name = "pageNo", defaultValue = "1") Integer pageNo,

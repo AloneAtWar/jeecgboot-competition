@@ -5,10 +5,7 @@ import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.jeecg.common.api.vo.Result;
 import org.jeecg.modules.competition.bean.entity.CompetitionSubmit;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Api(tags = "大赛后台")
 @RestController
@@ -21,7 +18,7 @@ public class JudgeController {
         return null;
     }
 
-    @GetMapping("/score")
+    @PostMapping("/score")
     public Result score(){
         //TODO 评分
         return null;
