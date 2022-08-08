@@ -178,6 +178,12 @@
             dataIndex: 'type_dictText'
           },
           {
+            title:'奖项设置',
+            align:"center",
+            dataIndex: 'award',
+            scopedSlots: {customRender: 'htmlSlot'}
+          },
+          {
             title: '操作',
             dataIndex: 'action',
             align:"center",
@@ -221,6 +227,7 @@
         fieldList.push({type:'datetime',value:'startTime',text:'开始时间'})
         fieldList.push({type:'datetime',value:'endTime',text:'结束时间'})
         fieldList.push({type:'int',value:'type',text:'赛事类型',dictCode:'competitionType'})
+        fieldList.push({type:'Text',value:'award',text:'奖项设置',dictCode:''})
         this.superFieldList = fieldList
       }
     }

@@ -125,12 +125,12 @@
           {
             title:'用户',
             align:"center",
-            dataIndex: 'userId'
+            dataIndex: 'userId_dictText'
           },
           {
             title:'大赛',
             align:"center",
-            dataIndex: 'competition'
+            dataIndex: 'competitionId_dictText'
           },
           {
             title:'提交时间',
@@ -148,6 +148,11 @@
             align:"center",
             dataIndex: 'fileUrl',
             scopedSlots: {customRender: 'fileSlot'}
+          },
+          {
+            title:'是否已经结算',
+            align:"center",
+            dataIndex: 'isSettlement_dictText'
           },
           {
             title: '操作',
@@ -184,10 +189,11 @@
       getSuperFieldList(){
         let fieldList=[];
         fieldList.push({type:'string',value:'userId',text:'用户',dictCode:"sys_user,username,id"})
-        fieldList.push({type:'string',value:'competition',text:'大赛',dictCode:"competition,name,id"})
+        fieldList.push({type:'string',value:'competitionId',text:'大赛',dictCode:"competition,name,id"})
         fieldList.push({type:'datetime',value:'createTime',text:'提交时间'})
         fieldList.push({type:'Text',value:'data',text:'文字部分',dictCode:''})
         fieldList.push({type:'Text',value:'fileUrl',text:'文件地址',dictCode:''})
+        fieldList.push({type:'int',value:'isSettlement',text:'是否已经结算',dictCode:'yn'})
         this.superFieldList = fieldList
       }
     }

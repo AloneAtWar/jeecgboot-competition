@@ -5,12 +5,12 @@
         <a-row>
           <a-col :span="24">
             <a-form-model-item label="用户" :labelCol="labelCol" :wrapperCol="wrapperCol" prop="userId">
-              <a-input v-model="model.userId" placeholder="请输入用户"  ></a-input>
+              <j-dict-select-tag type="list" v-model="model.userId" dictCode="sys_user,username,id" placeholder="请选择用户" />
             </a-form-model-item>
           </a-col>
           <a-col :span="24">
-            <a-form-model-item label="大赛" :labelCol="labelCol" :wrapperCol="wrapperCol" prop="competition">
-              <a-input v-model="model.competition" placeholder="请输入大赛"  ></a-input>
+            <a-form-model-item label="大赛" :labelCol="labelCol" :wrapperCol="wrapperCol" prop="competitionId">
+              <j-dict-select-tag type="list" v-model="model.competitionId" dictCode="competition,name,id" placeholder="请选择大赛" />
             </a-form-model-item>
           </a-col>
           <a-col :span="24">
@@ -26,6 +26,11 @@
           <a-col :span="24">
             <a-form-model-item label="文件地址" :labelCol="labelCol" :wrapperCol="wrapperCol" prop="fileUrl">
               <j-upload v-model="model.fileUrl"   ></j-upload>
+            </a-form-model-item>
+          </a-col>
+          <a-col :span="24">
+            <a-form-model-item label="是否已经结算" :labelCol="labelCol" :wrapperCol="wrapperCol" prop="isSettlement">
+              <j-dict-select-tag type="radio" v-model="model.isSettlement" dictCode="yn" placeholder="请选择是否已经结算" />
             </a-form-model-item>
           </a-col>
         </a-row>

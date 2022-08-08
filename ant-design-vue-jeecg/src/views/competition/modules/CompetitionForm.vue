@@ -54,6 +54,11 @@
               <j-dict-select-tag type="list" v-model="model.type" dictCode="competitionType" placeholder="请选择赛事类型" />
             </a-form-model-item>
           </a-col>
+          <a-col :span="24" >
+            <a-form-model-item label="奖项设置" :labelCol="labelCol" :wrapperCol="wrapperCol" prop="award">
+              <j-editor v-model="model.award" />
+            </a-form-model-item>
+          </a-col>
         </a-row>
       </a-form-model>
     </j-form-container>
