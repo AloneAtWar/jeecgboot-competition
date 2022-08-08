@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 // 所有角色的公用部分
-@Api(tags = "大赛后台")
+@Api(tags = "大赛后台-所有角色公用")
 @RestController
 @RequestMapping("/competition/")
 @Slf4j

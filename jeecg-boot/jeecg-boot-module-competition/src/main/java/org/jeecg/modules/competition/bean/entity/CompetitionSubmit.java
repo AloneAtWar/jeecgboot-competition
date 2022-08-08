@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.jeecg.common.aspect.annotation.Dict;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.jeecgframework.poi.excel.annotation.Excel;
 import io.swagger.annotations.ApiModel;
@@ -39,7 +40,7 @@ public class CompetitionSubmit implements Serializable {
 	/**大赛*/
 	@Excel(name = "大赛", width = 15)
     @ApiModelProperty(value = "大赛")
-    private java.lang.String competition;
+    private java.lang.String competition_id;
 	/**提交时间*/
 	@JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
@@ -53,4 +54,9 @@ public class CompetitionSubmit implements Serializable {
 	@Excel(name = "文件地址", width = 15)
     @ApiModelProperty(value = "文件地址")
     private java.lang.String fileUrl;
+
+    @Excel(name = "是否已经结算", width = 15, dicCode = "yn")
+    @Dict(dicCode = "yn")
+    @ApiModelProperty(value = "是否已经结算")
+	private java.lang.Integer isSettlement;
 }

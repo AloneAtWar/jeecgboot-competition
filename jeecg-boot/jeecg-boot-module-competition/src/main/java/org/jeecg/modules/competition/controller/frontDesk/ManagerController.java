@@ -7,7 +7,7 @@ import org.jeecg.common.api.vo.Result;
 import org.jeecg.modules.competition.bean.entity.CompetitionEnroll;
 import org.springframework.web.bind.annotation.*;
 
-@Api(tags = "大赛后台")
+@Api(tags = "大赛后台-管理者")
 @RestController
 @RequestMapping("/competition/")
 @Slf4j
