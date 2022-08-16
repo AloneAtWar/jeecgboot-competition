@@ -4,13 +4,19 @@
 
 	<delete id="deleteByMainId" parameterType="java.lang.String">
 		DELETE 
-		FROM  competition_permission 
+		FROM  `jeecg-boot`.competition_permission
 		WHERE
 			 competition_id = #{mainId} 	</delete>
 	
 	<select id="selectByMainId" parameterType="java.lang.String" resultType="org.jeecg.modules.competition.bean.entity.CompetitionPermission">
 		SELECT * 
-		FROM  competition_permission
+		FROM  `jeecg-boot`.competition_permission
 		WHERE
 			 competition_id = #{mainId} 	</select>
+	<select id="queryCompetitionIdByUserId" resultType="org.jeecg.modules.competition.bean.entity.CompetitionPermission">
+		SELECT * FROM `jeecg-boot`.competition_permission WHERE user_id=#{user_id} AND competition_id=#{competitionId}
+	</select>
+
+
 </mapper>
+

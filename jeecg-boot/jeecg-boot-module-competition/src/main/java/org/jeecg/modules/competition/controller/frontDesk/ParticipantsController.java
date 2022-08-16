@@ -8,7 +8,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.jeecg.common.api.vo.Result;
 import org.jeecg.common.system.vo.LoginUser;
-import org.jeecg.modules.competition.bean.entity.*;
+import org.jeecg.modules.competition.bean.entity.CompetitionEnroll;
+import org.jeecg.modules.competition.bean.entity.CompetitionPermission;
+import org.jeecg.modules.competition.bean.entity.CompetitionResult;
+import org.jeecg.modules.competition.bean.entity.CompetitionSubmit;
 import org.jeecg.modules.competition.bean.req.EnrollReq;
 import org.jeecg.modules.competition.bean.req.SubmitWorkReq;
 import org.jeecg.modules.competition.service.*;
@@ -16,7 +19,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.security.Permission;
 import java.util.Date;
 
 //参赛者有关的接口

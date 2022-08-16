@@ -1,16 +1,17 @@
 package org.jeecg.modules.competition.bean.resp;
 
-import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
 
-import javax.validation.constraints.*;
+import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 /**
  * SpecificCompetitionResp
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-08-06T14:21:21.719+08:00[Asia/Shanghai]")
-
+@AllArgsConstructor
 public class SpecificCompetitionResp   {
   @JsonProperty("my_type")
   private Integer myType;

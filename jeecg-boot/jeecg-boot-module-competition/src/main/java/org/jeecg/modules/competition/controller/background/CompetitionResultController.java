@@ -21,142 +21,142 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.jeecg.common.aspect.annotation.AutoLog;
 
- /**
- * @Description: 大赛结果表
- * @Author: jeecg-boot
- * @Date:   2022-08-01
- * @Version: V1.0
- */
+/**
+* @Description: 大赛结果表
+* @Author: jeecg-boot
+* @Date:   2022-08-01
+* @Version: V1.0
+*/
 @Api(tags="大赛结果表")
 @RestController
 @RequestMapping("/competition/competitionResult")
 @Slf4j
 public class CompetitionResultController extends JeecgController<CompetitionResult, ICompetitionResultService> {
-	@Autowired
-	private ICompetitionResultService competitionResultService;
-	
-	/**
-	 * 分页列表查询
-	 *
-	 * @param competitionResult
-	 * @param pageNo
-	 * @param pageSize
-	 * @param req
-	 * @return
-	 */
-	//@AutoLog(value = "大赛结果表-分页列表查询")
-	@ApiOperation(value="大赛结果表-分页列表查询", notes="大赛结果表-分页列表查询")
-	@GetMapping(value = "/list")
-	public Result<IPage<CompetitionResult>> queryPageList(CompetitionResult competitionResult,
-								   @RequestParam(name="pageNo", defaultValue="1") Integer pageNo,
-								   @RequestParam(name="pageSize", defaultValue="10") Integer pageSize,
-								   HttpServletRequest req) {
-		QueryWrapper<CompetitionResult> queryWrapper = QueryGenerator.initQueryWrapper(competitionResult, req.getParameterMap());
-		Page<CompetitionResult> page = new Page<CompetitionResult>(pageNo, pageSize);
-		IPage<CompetitionResult> pageList = competitionResultService.page(page, queryWrapper);
-		return Result.OK(pageList);
-	}
-	
-	/**
-	 *   添加
-	 *
-	 * @param competitionResult
-	 * @return
-	 */
-	@AutoLog(value = "大赛结果表-添加")
-	@ApiOperation(value="大赛结果表-添加", notes="大赛结果表-添加")
-	//@RequiresPermissions("org.jeecg.modules.demo:competition_result:add")
-	@PostMapping(value = "/add")
-	public Result<String> add(@RequestBody CompetitionResult competitionResult) {
-		competitionResultService.save(competitionResult);
-		return Result.OK("添加成功！");
-	}
-	
-	/**
-	 *  编辑
-	 *
-	 * @param competitionResult
-	 * @return
-	 */
-	@AutoLog(value = "大赛结果表-编辑")
-	@ApiOperation(value="大赛结果表-编辑", notes="大赛结果表-编辑")
-	//@RequiresPermissions("org.jeecg.modules.demo:competition_result:edit")
-	@RequestMapping(value = "/edit", method = {RequestMethod.PUT,RequestMethod.POST})
-	public Result<String> edit(@RequestBody CompetitionResult competitionResult) {
-		competitionResultService.updateById(competitionResult);
-		return Result.OK("编辑成功!");
-	}
-	
-	/**
-	 *   通过id删除
-	 *
-	 * @param id
-	 * @return
-	 */
-	@AutoLog(value = "大赛结果表-通过id删除")
-	@ApiOperation(value="大赛结果表-通过id删除", notes="大赛结果表-通过id删除")
-	//@RequiresPermissions("org.jeecg.modules.demo:competition_result:delete")
-	@DeleteMapping(value = "/delete")
-	public Result<String> delete(@RequestParam(name="id",required=true) String id) {
-		competitionResultService.removeById(id);
-		return Result.OK("删除成功!");
-	}
-	
-	/**
-	 *  批量删除
-	 *
-	 * @param ids
-	 * @return
-	 */
-	@AutoLog(value = "大赛结果表-批量删除")
-	@ApiOperation(value="大赛结果表-批量删除", notes="大赛结果表-批量删除")
-	//@RequiresPermissions("org.jeecg.modules.demo:competition_result:deleteBatch")
-	@DeleteMapping(value = "/deleteBatch")
-	public Result<String> deleteBatch(@RequestParam(name="ids",required=true) String ids) {
-		this.competitionResultService.removeByIds(Arrays.asList(ids.split(",")));
-		return Result.OK("批量删除成功!");
-	}
-	
-	/**
-	 * 通过id查询
-	 *
-	 * @param id
-	 * @return
-	 */
-	//@AutoLog(value = "大赛结果表-通过id查询")
-	@ApiOperation(value="大赛结果表-通过id查询", notes="大赛结果表-通过id查询")
-	@GetMapping(value = "/queryById")
-	public Result<CompetitionResult> queryById(@RequestParam(name="id",required=true) String id) {
-		CompetitionResult competitionResult = competitionResultService.getById(id);
-		if(competitionResult==null) {
-			return Result.error("未找到对应数据");
-		}
-		return Result.OK(competitionResult);
-	}
+   @Autowired
+   private ICompetitionResultService competitionResultService;
 
-    /**
-    * 导出excel
+   /**
+    * 分页列表查询
     *
-    * @param request
     * @param competitionResult
-    */
-    //@RequiresPermissions("org.jeecg.modules.demo:competition_result:exportXls")
-    @RequestMapping(value = "/exportXls")
-    public ModelAndView exportXls(HttpServletRequest request, CompetitionResult competitionResult) {
-        return super.exportXls(request, competitionResult, CompetitionResult.class, "大赛结果表");
-    }
-
-    /**
-      * 通过excel导入数据
-    *
-    * @param request
-    * @param response
+    * @param pageNo
+    * @param pageSize
+    * @param req
     * @return
     */
-    //@RequiresPermissions("competition_result:importExcel")
-    @RequestMapping(value = "/importExcel", method = RequestMethod.POST)
-    public Result<?> importExcel(HttpServletRequest request, HttpServletResponse response) {
-        return super.importExcel(request, response, CompetitionResult.class);
-    }
+   //@AutoLog(value = "大赛结果表-分页列表查询")
+   @ApiOperation(value="大赛结果表-分页列表查询", notes="大赛结果表-分页列表查询")
+   @GetMapping(value = "/list")
+   public Result<IPage<CompetitionResult>> queryPageList(CompetitionResult competitionResult,
+                                  @RequestParam(name="pageNo", defaultValue="1") Integer pageNo,
+                                  @RequestParam(name="pageSize", defaultValue="10") Integer pageSize,
+                                  HttpServletRequest req) {
+       QueryWrapper<CompetitionResult> queryWrapper = QueryGenerator.initQueryWrapper(competitionResult, req.getParameterMap());
+       Page<CompetitionResult> page = new Page<CompetitionResult>(pageNo, pageSize);
+       IPage<CompetitionResult> pageList = competitionResultService.page(page, queryWrapper);
+       return Result.OK(pageList);
+   }
+
+   /**
+    *   添加
+    *
+    * @param competitionResult
+    * @return
+    */
+   @AutoLog(value = "大赛结果表-添加")
+   @ApiOperation(value="大赛结果表-添加", notes="大赛结果表-添加")
+   //@RequiresPermissions("org.jeecg.modules.demo:competition_result:add")
+   @PostMapping(value = "/add")
+   public Result<String> add(@RequestBody CompetitionResult competitionResult) {
+       competitionResultService.save(competitionResult);
+       return Result.OK("添加成功！");
+   }
+
+   /**
+    *  编辑
+    *
+    * @param competitionResult
+    * @return
+    */
+   @AutoLog(value = "大赛结果表-编辑")
+   @ApiOperation(value="大赛结果表-编辑", notes="大赛结果表-编辑")
+   //@RequiresPermissions("org.jeecg.modules.demo:competition_result:edit")
+   @RequestMapping(value = "/edit", method = {RequestMethod.PUT,RequestMethod.POST})
+   public Result<String> edit(@RequestBody CompetitionResult competitionResult) {
+       competitionResultService.updateById(competitionResult);
+       return Result.OK("编辑成功!");
+   }
+
+   /**
+    *   通过id删除
+    *
+    * @param id
+    * @return
+    */
+   @AutoLog(value = "大赛结果表-通过id删除")
+   @ApiOperation(value="大赛结果表-通过id删除", notes="大赛结果表-通过id删除")
+   //@RequiresPermissions("org.jeecg.modules.demo:competition_result:delete")
+   @DeleteMapping(value = "/delete")
+   public Result<String> delete(@RequestParam(name="id",required=true) String id) {
+       competitionResultService.removeById(id);
+       return Result.OK("删除成功!");
+   }
+
+   /**
+    *  批量删除
+    *
+    * @param ids
+    * @return
+    */
+   @AutoLog(value = "大赛结果表-批量删除")
+   @ApiOperation(value="大赛结果表-批量删除", notes="大赛结果表-批量删除")
+   //@RequiresPermissions("org.jeecg.modules.demo:competition_result:deleteBatch")
+   @DeleteMapping(value = "/deleteBatch")
+   public Result<String> deleteBatch(@RequestParam(name="ids",required=true) String ids) {
+       this.competitionResultService.removeByIds(Arrays.asList(ids.split(",")));
+       return Result.OK("批量删除成功!");
+   }
+
+   /**
+    * 通过id查询
+    *
+    * @param id
+    * @return
+    */
+   //@AutoLog(value = "大赛结果表-通过id查询")
+   @ApiOperation(value="大赛结果表-通过id查询", notes="大赛结果表-通过id查询")
+   @GetMapping(value = "/queryById")
+   public Result<CompetitionResult> queryById(@RequestParam(name="id",required=true) String id) {
+       CompetitionResult competitionResult = competitionResultService.getById(id);
+       if(competitionResult==null) {
+           return Result.error("未找到对应数据");
+       }
+       return Result.OK(competitionResult);
+   }
+
+   /**
+   * 导出excel
+   *
+   * @param request
+   * @param competitionResult
+   */
+   //@RequiresPermissions("org.jeecg.modules.demo:competition_result:exportXls")
+   @RequestMapping(value = "/exportXls")
+   public ModelAndView exportXls(HttpServletRequest request, CompetitionResult competitionResult) {
+       return super.exportXls(request, competitionResult, CompetitionResult.class, "大赛结果表");
+   }
+
+   /**
+     * 通过excel导入数据
+   *
+   * @param request
+   * @param response
+   * @return
+   */
+   //@RequiresPermissions("competition_result:importExcel")
+   @RequestMapping(value = "/importExcel", method = RequestMethod.POST)
+   public Result<?> importExcel(HttpServletRequest request, HttpServletResponse response) {
+       return super.importExcel(request, response, CompetitionResult.class);
+   }
 
 }

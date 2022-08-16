@@ -24,7 +24,7 @@ public class CompetitionPage {
 
 	/**主键*/
 	@ApiModelProperty(value = "主键")
-    private java.lang.String id;
+    private String id;
 	/**创建日期*/
 	@JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
@@ -38,32 +38,32 @@ public class CompetitionPage {
 	/**名称*/
 	@Excel(name = "名称", width = 15)
 	@ApiModelProperty(value = "名称")
-    private java.lang.String name;
+    private String name;
 	/**图片*/
 	@Excel(name = "图片", width = 15)
 	@ApiModelProperty(value = "图片")
-    private java.lang.String picture;
+    private String picture;
 	/**简介*/
 	@Excel(name = "简介", width = 15)
 	@ApiModelProperty(value = "简介")
-    private java.lang.String introduction;
+    private String introduction;
 	/**标题*/
 	@Excel(name = "标题", width = 15)
 	@ApiModelProperty(value = "标题")
-    private java.lang.String title;
+    private String title;
 	/**是否需要志愿者*/
 	@Excel(name = "是否需要志愿者", width = 15, dicCode = "yn")
     @Dict(dicCode = "yn")
 	@ApiModelProperty(value = "是否需要志愿者")
-    private java.lang.Integer needVolunteers;
+    private Integer needVolunteers;
 	/**赛事详细介绍*/
 	@Excel(name = "赛事详细介绍", width = 15)
 	@ApiModelProperty(value = "赛事详细介绍")
-    private java.lang.String detailIntroduce;
+    private String detailIntroduce;
 	/**赛题详细*/
 	@Excel(name = "赛题详细", width = 15)
 	@ApiModelProperty(value = "赛题详细")
-    private java.lang.String problem;
+    private String problem;
 	/**开始时间*/
 	@Excel(name = "开始时间", width = 20, format = "yyyy-MM-dd HH:mm:ss")
 	@JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
@@ -80,7 +80,7 @@ public class CompetitionPage {
 	@Excel(name = "赛事类型", width = 15, dicCode = "competitionType")
     @Dict(dicCode = "competitionType")
 	@ApiModelProperty(value = "赛事类型")
-    private java.lang.Integer type;
+    private Integer type;
 
 	@ExcelCollection(name="大赛权限表")
 	@ApiModelProperty(value = "大赛权限表")

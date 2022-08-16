@@ -2,9 +2,11 @@ package org.jeecg.modules.competition.mapper;
 
 import java.util.List;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.jeecg.modules.competition.bean.entity.CompetitionPermission;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Param;
+
 
 /**
  * @Description: 大赛权限表
@@ -29,4 +31,9 @@ public interface CompetitionPermissionMapper extends BaseMapper<CompetitionPermi
    * @return List<CompetitionPermission>
    */
 	public List<CompetitionPermission> selectByMainId(@Param("mainId") String mainId);
+
+	public List<CompetitionPermission> queryCompetitionIdByUserId(Page<CompetitionPermission> competitionPermissions, String user_id);
+
+	public CompetitionPermission queryCompetitionIdByUserId(@Param("user_id") String user_id, @Param("competitionId") String competitionId);
+
 }

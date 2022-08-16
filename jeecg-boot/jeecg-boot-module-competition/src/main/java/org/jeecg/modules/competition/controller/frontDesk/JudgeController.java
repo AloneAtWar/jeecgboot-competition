@@ -3,14 +3,15 @@ package org.jeecg.modules.competition.controller.frontDesk;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.sun.org.apache.bcel.internal.generic.GETSTATIC;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
+import org.jeecg.common.api.dto.message.MessageDTO;
 import org.jeecg.common.api.vo.Result;
+import org.jeecg.common.system.api.ISysBaseAPI;
 import org.jeecg.common.system.vo.LoginUser;
-import org.jeecg.modules.competition.bean.entity.CompetitionEnroll;
+import org.jeecg.modules.competition.bean.entity.Competition;
 import org.jeecg.modules.competition.bean.entity.CompetitionPermission;
 import org.jeecg.modules.competition.bean.entity.CompetitionResult;
 import org.jeecg.modules.competition.bean.entity.CompetitionSubmit;
@@ -36,6 +37,10 @@ public class JudgeController {
     private ICompetitionSubmitService competitionSubmitService;
     @Autowired
     private ICompetitionResultService competitionResultService;
+
+    @Autowired
+    private ISysBaseAPI sysBaseAPI;
+
     @GetMapping("/submit")
     @ApiOperation(value="获取大赛提交", notes="获取大赛提交")
     public Result<IPage<CompetitionSubmit>> getCompetitionSubmits(@RequestParam("competition_id") String competitionId, @RequestParam(name = "pageNo", defaultValue = "1") Integer pageNo,
@@ -69,6 +74,12 @@ public class JudgeController {
         competitionResultService.save(competitionResult);
         permission.setState(CompetitionPermission.GET_SCORE_STATE);
         competitionPermissionService.updateById(permission);
+        new Thread(() -> {
+            log.info("评分消息 正在发送当中");
+            LoginUser user = sysBaseAPI.getUserById(userId);
+            Competition competition = competitionService.getById(competitionId);
+            sysBaseAPI.sendSysAnnouncement(new MessageDTO("admin",user.getUsername(),competition.getTitle()+" 比赛获得评分!",competition.getTitle()+" 比赛获得"+score+"的分数"));
+        }).start();
         return Result.ok();
     }
 

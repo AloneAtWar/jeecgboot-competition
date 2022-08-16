@@ -11,7 +11,7 @@
  Target Server Version : 80026
  File Encoding         : 65001
 
- Date: 08/08/2022 18:55:56
+ Date: 16/08/2022 15:31:35
 */
 
 SET NAMES utf8mb4;
@@ -201,7 +201,7 @@ CREATE TABLE `competition`  (
 -- ----------------------------
 -- Records of competition
 -- ----------------------------
-INSERT INTO `competition` VALUES ('1554127518306234370', '2022-08-01 23:30:49', '2022-08-08 18:29:11', '陈思达', 'aaa', '111', 1, '<p>1112</p>', '<p>11221</p>', '2022-08-01 23:30:10', '2022-08-15 23:30:10', 0, 'temp/srchttp___txt25-2.book118.com_2018_0108_book147906_147905514.jpgreferhttp___txt25-2.book118_1659367836077.webp', NULL);
+INSERT INTO `competition` VALUES ('1554127518306234370', '2022-08-01 23:30:49', '2022-08-16 15:05:25', '陈思达', 'aaa', '111', 1, '<p>1112</p>', '<p>11221</p>', '2022-08-01 23:30:10', '2022-08-15 23:30:10', 0, 'temp/srchttp___txt25-2.book118.com_2018_0108_book147906_147905514.jpgreferhttp___txt25-2.book118_1659367836077.webp', NULL);
 INSERT INTO `competition` VALUES ('1554308011991597057', '2022-08-02 11:28:02', '2022-08-08 18:26:51', NULL, NULL, NULL, NULL, '', '', NULL, NULL, 0, NULL, NULL);
 
 -- ----------------------------
@@ -262,11 +262,6 @@ CREATE TABLE `competition_result`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of competition_result
--- ----------------------------
-INSERT INTO `competition_result` VALUES ('1556591163023831041', '1554127518306234370', '1554052645424726017', 99, '2022-08-08 18:40:27');
-
--- ----------------------------
 -- Table structure for competition_submit
 -- ----------------------------
 DROP TABLE IF EXISTS `competition_submit`;
@@ -284,7 +279,7 @@ CREATE TABLE `competition_submit`  (
 -- ----------------------------
 -- Records of competition_submit
 -- ----------------------------
-INSERT INTO `competition_submit` VALUES ('1556587356110057473', '1554052645424726017', '1554127518306234370', '2022-08-08 18:25:14', '<p>11212121</p>', '', 1);
+INSERT INTO `competition_submit` VALUES ('1559435144049008642', '1554052645424726017', '1554127518306234370', '2022-08-16 15:01:22', '', '', 0);
 
 -- ----------------------------
 -- Table structure for demo
@@ -1849,6 +1844,7 @@ INSERT INTO `onl_auth_page` VALUES ('1554061662930862083', '8b6b8f6463fe4a7f9475
 INSERT INTO `onl_auth_page` VALUES ('1554061668698030081', '8b6b8f6463fe4a7f94759c3190d8b111', 'picture', 1, 5, 3, 0, '2022-08-01 19:09:10', 'admin', NULL, NULL);
 INSERT INTO `onl_auth_page` VALUES ('1554061668706418690', '8b6b8f6463fe4a7f94759c3190d8b111', 'picture', 1, 5, 5, 0, '2022-08-01 19:09:10', 'admin', NULL, NULL);
 INSERT INTO `onl_auth_page` VALUES ('1554061668706418691', '8b6b8f6463fe4a7f94759c3190d8b111', 'picture', 1, 3, 5, 0, '2022-08-01 19:09:10', 'admin', NULL, NULL);
+INSERT INTO `onl_auth_page` VALUES ('1559441014585651202', '607d52c35f14436a8c88826f70b3f603', 'update', 2, 5, 3, 0, '2022-08-16 15:24:46', 'aa', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for onl_auth_relation
@@ -3137,7 +3133,7 @@ CREATE TABLE `qrtz_scheduler_state`  (
 -- ----------------------------
 -- Records of qrtz_scheduler_state
 -- ----------------------------
-INSERT INTO `qrtz_scheduler_state` VALUES ('MyScheduler', 'LAPTOP-PUB8VID51659956058650', 1659956154057, 15000);
+INSERT INTO `qrtz_scheduler_state` VALUES ('MyScheduler', 'LAPTOP-PUB8VID51660635023616', 1660635065620, 15000);
 
 -- ----------------------------
 -- Table structure for qrtz_simple_triggers
@@ -3464,6 +3460,8 @@ INSERT INTO `sys_announcement` VALUES ('1256486817286418434', '放假通知', '<
 INSERT INTO `sys_announcement` VALUES ('1256529336858685441', '1', '<p>22</p>', '2020-05-02 18:21:41', '2020-05-30 18:21:44', 'admin', 'M', '1', 'ALL', '2', '2020-05-02 18:21:57', '2020-05-02 18:22:07', '1', NULL, NULL, NULL, NULL, 'admin', '2020-05-02 18:21:54', 'admin', '2021-08-12 16:05:00', NULL, '22', NULL);
 INSERT INTO `sys_announcement` VALUES ('1524265037052194817', '1231231', NULL, NULL, '2022-05-14 13:47:54', 'admin', 'H', '1', 'ALL', '2', '2022-05-11 13:48:04', '2022-05-11 14:04:18', '1', NULL, NULL, NULL, NULL, 'admin', '2022-05-11 13:47:59', 'admin', '2022-05-11 14:04:21', 'undefined,', '23123', NULL);
 INSERT INTO `sys_announcement` VALUES ('1524269214973243394', '123123', '<p>111</p>', NULL, '2022-05-12 14:04:24', 'admin', 'H', '1', 'ALL', '1', '2022-05-11 14:04:37', NULL, '0', NULL, NULL, NULL, NULL, 'admin', '2022-05-11 14:04:35', 'admin', '2022-05-11 14:04:37', 'undefined,', '123123', NULL);
+INSERT INTO `sys_announcement` VALUES ('1559437032450498561', '大赛作品获得评分', '1554127518306234370获得评分99分', NULL, NULL, 'a75d45a015c44384a04449ee80dc3503', 'M', '2', 'USER', '1', '2022-08-16 15:08:56', NULL, '0', NULL, NULL, NULL, NULL, 'jeecg', '2022-08-16 15:08:56', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `sys_announcement` VALUES ('1559438121975541762', '大赛作品获得评分', '1554127518306234370获得评分99分', NULL, NULL, 'admin', 'M', '2', 'USER', '1', '2022-08-16 15:13:16', NULL, '0', NULL, NULL, NULL, NULL, 'jeecg', '2022-08-16 15:13:16', NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `sys_announcement` VALUES ('1b714f8ebc3cc33f8b4f906103b6a18d', '5467567', NULL, NULL, NULL, 'admin', NULL, '2', NULL, '1', '2019-03-30 12:40:38', NULL, '1', NULL, NULL, NULL, NULL, 'admin', '2019-02-26 17:23:26', 'admin', '2020-05-02 15:30:42', NULL, NULL, NULL);
 INSERT INTO `sys_announcement` VALUES ('3d11237ccdf62450d20bb8abdb331178', '111222', NULL, NULL, NULL, NULL, NULL, '2', NULL, '0', NULL, NULL, '1', NULL, NULL, NULL, NULL, 'admin', '2019-03-29 17:19:47', 'admin', '2019-03-29 17:19:50', NULL, NULL, NULL);
 INSERT INTO `sys_announcement` VALUES ('7ef04e95f8de030b1d5f7a9144090dc6', '111', NULL, '2019-02-06 17:28:10', '2019-03-08 17:28:11', NULL, NULL, '2', NULL, '0', NULL, NULL, '1', NULL, NULL, NULL, NULL, 'admin', '2019-02-26 17:28:17', 'admin', '2019-03-26 19:59:49', NULL, NULL, NULL);
@@ -3499,6 +3497,7 @@ INSERT INTO `sys_announcement_send` VALUES ('1260927781673484290', '125648650293
 INSERT INTO `sys_announcement_send` VALUES ('1524265883060088833', '1524265037052194817', 'e9ca23d68d884d4ebb19d07889727dae', '0', NULL, 'admin', '2022-05-11 13:51:21', NULL, NULL);
 INSERT INTO `sys_announcement_send` VALUES ('1524269222510407682', '1524269214973243394', 'e9ca23d68d884d4ebb19d07889727dae', '1', '2022-05-18 18:01:29', 'admin', '2022-05-11 14:04:37', 'admin', '2022-05-18 18:01:29');
 INSERT INTO `sys_announcement_send` VALUES ('1539164576187887617', '1524269214973243394', 'a75d45a015c44384a04449ee80dc3503', '0', NULL, 'jeecg', '2022-06-21 16:33:26', NULL, NULL);
+INSERT INTO `sys_announcement_send` VALUES ('1559438122378194946', '1559438121975541762', '1554052645424726017', '1', '2022-08-16 15:13:48', 'jeecg', '2022-08-16 15:13:16', 'aa', '2022-08-16 15:13:48');
 
 -- ----------------------------
 -- Table structure for sys_category
@@ -7222,6 +7221,40 @@ INSERT INTO `sys_log` VALUES ('1556591639249301505', 2, 'online列表加载,表�
 INSERT INTO `sys_log` VALUES ('1556592866099998721', 2, 'online列表加载,表名:competition_submit,操作成功', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.online.cgform.c.a.a()', NULL, '', NULL, 290, NULL, '2022-08-08 18:47:14', NULL, NULL);
 INSERT INTO `sys_log` VALUES ('1556592866720755713', 2, 'online表单加载,表名:competition_submit,操作成功', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.online.cgform.c.a.b()', NULL, '', NULL, 443, NULL, '2022-08-08 18:47:14', NULL, NULL);
 INSERT INTO `sys_log` VALUES ('1556594223481737218', 1, '用户名: admin,登录成功！', NULL, 'admin', '管理员', '0:0:0:0:0:0:0:1', NULL, NULL, NULL, NULL, NULL, NULL, '2022-08-08 18:52:38', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559149486533349378', 1, '用户名: admin,登录成功！', NULL, 'admin', '管理员', '0:0:0:0:0:0:0:1', NULL, NULL, NULL, NULL, NULL, NULL, '2022-08-15 20:06:20', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559434602581139458', 1, '用户名: 管理员,退出成功！', NULL, 'admin', '管理员', '0:0:0:0:0:0:0:1', NULL, NULL, NULL, NULL, NULL, NULL, '2022-08-16 14:59:17', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559434643681124353', 1, '用户名: admin,登录成功！', NULL, 'admin', '管理员', '0:0:0:0:0:0:0:1', NULL, NULL, NULL, NULL, NULL, NULL, '2022-08-16 14:59:27', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559434904302592001', 2, '大赛提交记录表-编辑', 3, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.competition.controller.background.CompetitionSubmitController.edit()', NULL, '[{\"createTime\":1659954314000,\"data\":\"<p>11212121</p>\",\"fileUrl\":\"\",\"id\":\"1556587356110057473\",\"isSettlement\":0,\"userId\":\"1554052645424726017\"}]', NULL, 21, NULL, '2022-08-16 15:00:29', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559434961269628930', 2, '大赛提交记录表-编辑', 3, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.competition.controller.background.CompetitionSubmitController.edit()', NULL, '[{\"createTime\":1659954314000,\"data\":\"<p>11212121</p>\",\"fileUrl\":\"\",\"id\":\"1556587356110057473\",\"isSettlement\":0,\"userId\":\"e9ca23d68d884d4ebb19d07889727dae\"}]', NULL, 15, NULL, '2022-08-16 15:00:42', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559435042743984130', 2, '大赛提交记录表-编辑', 3, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.competition.controller.background.CompetitionSubmitController.edit()', NULL, '[{\"createTime\":1659954314000,\"data\":\"<p>11212121</p>\",\"fileUrl\":\"\",\"id\":\"1556587356110057473\",\"isSettlement\":0,\"userId\":\"e9ca23d68d884d4ebb19d07889727dae\"}]', NULL, 6, NULL, '2022-08-16 15:01:02', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559435104119234562', 2, '大赛提交记录表-批量删除', 4, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.competition.controller.background.CompetitionSubmitController.deleteBatch()', NULL, '  ids: 1556587356110057473,', NULL, 26, NULL, '2022-08-16 15:01:16', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559435144149671938', 2, '大赛提交记录表-添加', 2, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.competition.controller.background.CompetitionSubmitController.add()', NULL, '[{\"createTime\":1660633282000,\"id\":\"1559435144049008642\",\"isSettlement\":0,\"userId\":\"1554052645424726017\"}]', NULL, 39, NULL, '2022-08-16 15:01:26', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559435307404566529', 2, 'online列表加载,表名:competition_submit,操作成功', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.online.cgform.c.a.a()', NULL, '', NULL, 591, NULL, '2022-08-16 15:02:05', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559435308339896322', 2, 'online表单加载,表名:competition_submit,操作成功', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.online.cgform.c.a.b()', NULL, '', NULL, 814, NULL, '2022-08-16 15:02:05', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559435321598091265', 2, 'online表单数据查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.online.cgform.c.a.b()', NULL, '', NULL, 136, NULL, '2022-08-16 15:02:08', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559435340107554817', 2, 'online修改数据,表名:competition_submit,修改成功！', 3, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.online.cgform.c.a.a()', NULL, '[\"e9cb4433565a407c969d907c6d6e6020\",{\"is_settlement\":0,\"file_url\":\"\",\"create_time\":\"2022-08-16 15:01:22\",\"data\":\"\",\"user_id\":\"1554052645424726017\",\"competition_id\":\"1554127518306234370\",\"id\":\"1559435144049008642\"}]', NULL, 138, NULL, '2022-08-16 15:02:13', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559436147875979265', 2, '大赛表-编辑', 3, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.competition.controller.background.CompetitionController.edit()', NULL, '[{\"competitionPermissionList\":[{\"competitionId\":\"1554127518306234370\",\"id\":\"131\",\"state\":3,\"type\":0,\"userId\":\"1554052645424726017\"},{\"competitionId\":\"1554127518306234370\",\"id\":\"1554127518373343233\",\"state\":4,\"type\":2,\"userId\":\"a75d45a015c44384a04449ee80dc3503\"}],\"createTime\":1659367849000,\"detailIntroduce\":\"<p>1112</p>\",\"endTime\":1660577410000,\"id\":\"1554127518306234370\",\"introduction\":\"aaa\",\"name\":\"陈思达\",\"needVolunteers\":1,\"picture\":\"temp/srchttp___txt25-2.book118.com_2018_0108_book147906_147905514.jpgreferhttp___txt25-2.book118_1659367836077.webp\",\"problem\":\"<p>11221</p>\",\"startTime\":1659367810000,\"title\":\"111\",\"type\":0,\"updateTime\":1659954551000}]', NULL, 78, NULL, '2022-08-16 15:05:25', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559436380273975297', 1, '用户名: jeecg,登录成功！', NULL, 'jeecg', 'jeecg', '0:0:0:0:0:0:0:1', NULL, NULL, NULL, NULL, NULL, NULL, '2022-08-16 15:06:21', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559436551783260162', 2, '大赛结果表-批量删除', 4, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.competition.controller.background.CompetitionResultController.deleteBatch()', NULL, '  ids: 1556591163023831041,', NULL, 11, NULL, '2022-08-16 15:07:02', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559437196745580545', 2, '职务表-分页列表查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.system.controller.SysPositionController.queryPageList()', NULL, '  sysPosition: SysPosition(id=null, code=null, name=null, postRank=null, companyId=null, createBy=null, createTime=null, updateBy=null, updateTime=null, sysOrgCode=null)  pageNo: 1  pageSize: 5  req: org.apache.shiro.web.servlet.ShiroHttpServletRequest@b6c872b', NULL, 251, NULL, '2022-08-16 15:09:35', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559437287535484930', 2, '修改用户 aa 的密码，操作人： admin', 2, 'admin', '管理员', '0:0:0:0:0:0:0:1', NULL, NULL, NULL, NULL, NULL, NULL, '2022-08-16 15:09:57', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559437301435408386', 1, '用户名: 管理员,退出成功！', NULL, 'admin', '管理员', '0:0:0:0:0:0:0:1', NULL, NULL, NULL, NULL, NULL, NULL, '2022-08-16 15:10:00', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559437386659471362', 1, '用户名: aa,登录成功！', NULL, 'aa', '陈思达', '0:0:0:0:0:0:0:1', NULL, NULL, NULL, NULL, NULL, NULL, '2022-08-16 15:10:21', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559440913125437442', 2, 'online列表加载,表名:competition_submit,操作成功', 1, 'aa', '陈思达', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.online.cgform.c.a.a()', NULL, '', NULL, 328, NULL, '2022-08-16 15:24:21', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559440913922355202', 2, 'online表单加载,表名:competition_submit,操作成功', 1, 'aa', '陈思达', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.online.cgform.c.a.b()', NULL, '', NULL, 525, NULL, '2022-08-16 15:24:22', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559441427749761026', 2, '大赛结果表-批量删除', 4, 'aa', '陈思达', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.competition.controller.background.CompetitionResultController.deleteBatch()', NULL, '  ids: 1559438114421600258,1559437020911968257,', NULL, 38, NULL, '2022-08-16 15:26:24', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559441450369642497', 2, '大赛提交记录表-编辑', 3, 'aa', '陈思达', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.competition.controller.background.CompetitionSubmitController.edit()', NULL, '[{\"createTime\":1660633282000,\"data\":\"\",\"fileUrl\":\"\",\"id\":\"1559435144049008642\",\"isSettlement\":0,\"userId\":\"1554052645424726017\"}]', NULL, 16, NULL, '2022-08-16 15:26:29', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559441467180412930', 1, '用户名: 陈思达,退出成功！', NULL, 'aa', '陈思达', '0:0:0:0:0:0:0:1', NULL, NULL, NULL, NULL, NULL, NULL, '2022-08-16 15:26:33', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559441826921672705', 1, '用户名: admin,登录成功！', NULL, 'admin', '管理员', '0:0:0:0:0:0:0:1', NULL, NULL, NULL, NULL, NULL, NULL, '2022-08-16 15:27:59', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559441877626613761', 2, '大赛提交记录表-编辑', 3, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.competition.controller.background.CompetitionSubmitController.edit()', NULL, '[{\"createTime\":1660633282000,\"data\":\"\",\"fileUrl\":\"\",\"id\":\"1559435144049008642\",\"isSettlement\":0,\"userId\":\"1554052645424726017\"}]', NULL, 3, NULL, '2022-08-16 15:28:11', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559441915937386497', 2, 'online列表加载,表名:competition_enroll,操作成功', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.online.cgform.c.a.a()', NULL, '', NULL, 470, NULL, '2022-08-16 15:28:20', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559441916595892226', 2, 'online表单加载,表名:competition_enroll,操作成功', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.online.cgform.c.a.b()', NULL, '', NULL, 634, NULL, '2022-08-16 15:28:21', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559441953191194625', 2, 'online列表加载,表名:competition_submit,操作成功', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.online.cgform.c.a.a()', NULL, '', NULL, 245, NULL, '2022-08-16 15:28:29', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559441953946169346', 2, 'online表单加载,表名:competition_submit,操作成功', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.online.cgform.c.a.b()', NULL, '', NULL, 425, NULL, '2022-08-16 15:28:30', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559441999374675970', 2, 'online表单数据查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.online.cgform.c.a.b()', NULL, '', NULL, 190, NULL, '2022-08-16 15:28:40', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559442522115002369', 2, 'online表单加载,表名:competition_submit,操作成功', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.online.cgform.c.a.b()', NULL, '', NULL, 285, NULL, '2022-08-16 15:30:45', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559442522366660610', 2, 'online列表加载,表名:competition_submit,操作成功', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.online.cgform.c.a.a()', NULL, '', NULL, 382, NULL, '2022-08-16 15:30:45', NULL, NULL);
+INSERT INTO `sys_log` VALUES ('1559442551286386690', 2, 'online表单数据查询', 1, 'admin', '管理员', '0:0:0:0:0:0:0:1', 'org.jeecg.modules.online.cgform.c.a.b()', NULL, '', NULL, 242, NULL, '2022-08-16 15:30:52', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for sys_permission
@@ -8731,7 +8764,7 @@ CREATE TABLE `sys_user`  (
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES ('1554052645424726017', 'aa', '陈思达', '99f140075ffb4481', 'wj3Qf9s8', NULL, NULL, NULL, NULL, '18083804137', NULL, 1, 0, NULL, NULL, 1, '00000', NULL, NULL, 'admin', '2022-08-01 18:33:18', 'admin', '2022-08-08 18:10:55', 1, '', NULL, NULL);
+INSERT INTO `sys_user` VALUES ('1554052645424726017', 'aa', '陈思达', 'd7ab38baa6fbea21', 'EpYGKGHm', NULL, NULL, NULL, NULL, '18083804137', NULL, 1, 0, NULL, NULL, 1, '00000', NULL, NULL, 'admin', '2022-08-01 18:33:18', 'admin', '2022-08-16 15:09:57', 1, '', NULL, NULL);
 INSERT INTO `sys_user` VALUES ('3d464b4ea0d2491aab8a7bde74c57e95', 'zhangsan', '张三', '02ea098224c7d0d2077c14b9a3a1ed16', 'x5xRdeKB', 'https://static.jeecg.com/temp/jmlogo_1606575041993.png', NULL, NULL, NULL, NULL, '财务部', 1, 0, NULL, NULL, 1, '0005', '总经理', NULL, 'admin', '2020-05-14 21:26:24', 'admin', '2020-09-09 14:42:51', 1, '', '', NULL);
 INSERT INTO `sys_user` VALUES ('a75d45a015c44384a04449ee80dc3503', 'jeecg', 'jeecg', 'eee378a1258530cb', 'mIgiYJow', 'https://static.jeecg.com/temp/国炬软件logo_1606575029126.png', NULL, 1, NULL, NULL, 'A02A01', 1, 0, NULL, NULL, 1, '00002', 'devleader', NULL, 'admin', '2019-02-13 16:02:36', 'jeecg', '2022-03-09 23:03:21', 1, '', NULL, NULL);
 INSERT INTO `sys_user` VALUES ('e9ca23d68d884d4ebb19d07889727dae', 'admin', '管理员', 'cb362cfeefbf3d8d', 'RCGTeGiH', 'https://static.jeecg.com/temp/国炬软件logo_1606575029126.png', '2018-12-05 00:00:00', 1, 'jeecg@163.com', '18611111111', 'A01', 1, 0, NULL, NULL, 1, '00001', '总经理', NULL, NULL, '2019-06-21 17:54:10', 'admin', '2022-03-09 22:50:20', 2, 'c6d7cb4deeac411cb3384b1b31278596', '', NULL);
