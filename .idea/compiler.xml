@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="jeecg-boot-base-core" />
+        <module name="jeecg-system-biz" />
+        <module name="jeecg-system-start" />
+        <module name="jeecg-system-cloud-api" />
+        <module name="jeecg-system-local-api" />
+        <module name="jeecg-boot-module-competition" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="jeecg-boot-base-core" target="1.8" />
+      <module name="jeecg-boot-module-competition" target="1.8" />
+      <module name="jeecg-boot-parent" target="1.8" />
+      <module name="jeecg-module-system" target="1.8" />
+      <module name="jeecg-system-api" target="1.8" />
+      <module name="jeecg-system-biz" target="1.8" />
+      <module name="jeecg-system-cloud-api" target="1.8" />
+      <module name="jeecg-system-local-api" target="1.8" />
+      <module name="jeecg-system-start" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="jeecg-boot-base-core" options="-parameters" />
+      <module name="jeecg-boot-module-competition" options="-parameters" />
+      <module name="jeecg-system-biz" options="-parameters" />
+      <module name="jeecg-system-cloud-api" options="-parameters" />
+      <module name="jeecg-system-local-api" options="-parameters" />
+      <module name="jeecg-system-start" options="-parameters" />
+    </option>
+  </component>
+</project>

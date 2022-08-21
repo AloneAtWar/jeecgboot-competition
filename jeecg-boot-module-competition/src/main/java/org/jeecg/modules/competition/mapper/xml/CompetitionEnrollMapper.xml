@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.competition.mapper.CompetitionEnrollMapper">
+
+    <select id="queryAllByCompetitionId" resultType="org.jeecg.modules.competition.bean.entity.CompetitionEnroll">
+        SELECT * FROM competition_enroll WHERE competition_id=#{competitionID}<if test="#{state}!=null">
+        And state=#{state}
+    </if>
+
+    </select>
+    <update id="updateStateById">
+        UPDATE competition_enroll SET state=#{state} WHERE id=#{id}
+    </update>
+
+</mapper>
